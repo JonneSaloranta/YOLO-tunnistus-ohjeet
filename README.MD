@@ -1,3 +1,7 @@
+Jos löydät virheitä, haluat lisätä jotain tai on jotain kysyttävää voit tehdä pull requestin, tehdä issuen tai lähettää sähköpostia osoitteeseen:
+
+> saloranta.jonne[at]gmail.com
+
 ## Vaatimukset
 
 <details>
