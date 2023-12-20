@@ -44,6 +44,10 @@ git clone <repo linkki>
 
 ## Virtuaalinen ympäristö
 
+<detail>
+<summary>Virtuaalisen ympäristön ohje</summary>
+<br>
+
 Virtuaalinen ympäristö kannattaa luoda, jotta ei tule ongelmia eri versioiden kanssa. Tässä ohjeessa käytetään Pythonin omaa virtuaalista ympäristöä.
 
 Avaa komentokehote ja siirry kansioon johon haluat luoda virtuaalisen ympäristön.
@@ -75,6 +79,8 @@ Nyt voit asentaa Ultralyticsin virtuaaliseen ympäristöön.
 ```cmd
 pip install ultralytics
 ```
+
+</detail>
 
 <a name="kuvien-ottaminen"></a>
 
