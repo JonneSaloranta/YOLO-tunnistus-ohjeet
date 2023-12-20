@@ -1,0 +1,12 @@
+venv
+*.pt
+.git
+*.onnx
+.obsidian
+
+raw/*.[JjPp][PpNn][EeGg][Gg]
+processed/*.[JjPpTt][PpNnXx][EeGgTt]
+
+dataset/test/*.[JjPp][PpNn][EeGg][Gg]
+dataset/train/*.[JjPp][PpNn][EeGg]
+dataset/valid/*.[JjPp][PpNn][EeGg]
