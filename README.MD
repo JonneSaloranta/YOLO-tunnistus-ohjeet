@@ -147,7 +147,7 @@ Säästän kuitenkin kaikkien aikaa ja hermoja, joten tein lyhyen scriptin Pytho
 
 ![50kpl käsiteltyjä kuvia](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/85b98060-6221-4cf9-bb93-c1b14d1ae2d0)
 
-Scripti löytyy nimellä: **randomize_images.py**
+Scripti löytyy täältä: [randomize_images.py](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/blob/master/randomize_images.py)
 
 <a name="randomize_images.py"></a>
 
