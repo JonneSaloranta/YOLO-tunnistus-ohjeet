@@ -1,5 +1,9 @@
 from ultralytics import YOLO
 
-model = YOLO("yolov8n-seg.pt")  # load a pretrained model (recommended for training)
+model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
 
-results = model.train("../dataset/dataset.yaml", epochs=10, batch_size=8, imgsz=640, workers=4)
+try:
+    results = model.train(data="dataset/dataset.yaml", epochs=10, batch=8, imgsz=640, workers=4)
+
+except Exception as e:
+    print(e)

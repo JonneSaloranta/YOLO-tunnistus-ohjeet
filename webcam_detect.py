@@ -2,8 +2,9 @@ from ultralytics import YOLO
 import cv2
 
 # Load a model
-model = YOLO("yolov8n-seg.pt")  # load a pretrained model (recommended for training)
-# model = YOLO("yolov8n-cls.pt")  # load a pretrained model (recommended for training)
+# model = YOLO("yolov8n-seg.pt")  # load a pretrained model (recommended for training)
+
+model = YOLO("./best.pt")  # lataa oma malli
 
 
 cap = cv2.VideoCapture(0)  # 0 is the index of the default camera)

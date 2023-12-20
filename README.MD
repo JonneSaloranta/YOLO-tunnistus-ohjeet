@@ -139,6 +139,8 @@ Kappaleen tunnistus mallin opetusdatan(kuvien) tulisi sisältää mahdollisimman
 
 <br>
 
+Paras tapa saada mahdollisimman paljon erilaisia realistisia variaatioita kuvista on ottaa niitä itse, tällöin niistä on mahdollisesti helpompi saada hyvää dataa. Suosittelen jättämään seuraavan kuvien käsittely osion väliin, mutta jos haluat käyttää sitä, niin seuraavassa on ohjeet.
+
 Kuvien käsittely on suhteellisen helppoa. Kuvien käsittelyssä on hyvä käyttää erilaisia kuvankäsittelyohjelmia. Esim. GIMP, Photoshop, Paint.net, jne.
 
 Säästän kuitenkin kaikkien aikaa ja hermoja, joten tein lyhyen scriptin Pythonilla, joka käy läpi kaikki kuvat ja muokkaa niitä satunnaisesti omien raja-arvojen mukaan.
@@ -280,4 +282,16 @@ Tiedosto sisältää 5 arvoa, jotka ovat _luokka, x1, y1, x2, y2_
 -   _x2_ on annotaation oikean alakulman x koordinaatti.
 -   _y2_ on annotaation oikean alakulman y koordinaatti.
 
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/ff9d9a62-94c9-4f8e-9985-efa38b84cc03)
+
 </details>
+
+mallin opettaminen käynnissä
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/3a907537-620c-4bf3-903b-a56908e90c95)
+
+train_batch2
+![train_batch2](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/20d5e81f-4e48-42fd-8274-c58bfc9e92b4)
+
+tilastoja
+
+![results](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/18681a4c-e646-481b-87d3-c759ee2be370)

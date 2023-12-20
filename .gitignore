@@ -4,9 +4,15 @@ venv
 *.onnx
 .obsidian
 
+
+
 raw/*.[JjPp][PpNn][EeGg][Gg]
 processed/*.[JjPpTt][PpNnXx][EeGgTt]
 
-dataset/test/*.[JjPp][PpNn][EeGg][Gg]
-dataset/train/*.[JjPp][PpNn][EeGg]
-dataset/valid/*.[JjPp][PpNn][EeGg]
+dataset/test/*.[JjPpTt][PpNnXx][EeGg][GgTt]
+dataset/train/*.[JjPpTt][PpNnXx][EeGgTt]
+dataset/valid/*.[JjPpTt][PpNnXx][EeGgTt]
+dataset/*.cache
+
+
+runs/
