@@ -44,7 +44,7 @@ git clone <repo linkki>
 
 ## Virtuaalinen ympäristö
 
-<detail>
+<details>
 <summary>Virtuaalisen ympäristön ohje</summary>
 <br>
 
@@ -80,7 +80,7 @@ Nyt voit asentaa Ultralyticsin virtuaaliseen ympäristöön.
 pip install ultralytics
 ```
 
-</detail>
+</details>
 
 <a name="kuvien-ottaminen"></a>
 
