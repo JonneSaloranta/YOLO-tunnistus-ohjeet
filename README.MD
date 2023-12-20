@@ -56,7 +56,7 @@ Tässä ohjeessa käytetään Colabia, joten tämä ei sisällä ohjeita sille m
 Lataa mallipohja (suositeltavaa) [täältä](https://github.com/JonneSaloranta?tab=repositories) ja pura se haluamaasi kansioon. Voit myös kloonata sen gitillä.
 
 ```cmd
-git clone <repo linkki>
+git clone https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet.git
 ```
 
 </details>
@@ -72,6 +72,8 @@ git clone <repo linkki>
 Virtuaalinen ympäristö kannattaa luoda, jotta ei tule ongelmia eri versioiden kanssa. Tässä ohjeessa käytetään Pythonin omaa virtuaalista ympäristöä.
 
 Avaa komentokehote ja siirry kansioon johon haluat luoda virtuaalisen ympäristön.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/4263bfae-9e71-4b83-bdff-fe74918119f0)
 
 ```cmd
 cd C:\Users\user\Desktop\malli
@@ -137,6 +139,14 @@ Kuvien käsittely on suhteellisen helppoa. Kuvien käsittelyssä on hyvä käytt
 
 Säästän kuitenkin kaikkien aikaa ja hermoja, joten tein lyhyen scriptin Pythonilla, joka käy läpi kaikki kuvat ja muokkaa niitä satunnaisesti omien raja-arvojen mukaan.
 
+> Yksi syötetty kuva
+
+![Yksi syötetty kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/882321ca-f714-49da-810a-54e99ab78026)
+
+> 50kpl käsiteltyjä kuvia
+
+![50kpl käsiteltyjä kuvia](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/85b98060-6221-4cf9-bb93-c1b14d1ae2d0)
+
 Scripti löytyy nimellä: **randomize_images.py**
 
 <a name="randomize_images.py"></a>
@@ -177,7 +187,13 @@ Annotaatiot voi luoda monella eri ohjelmalla. Tässä ohjeessa käytetään Labe
 
 [LabelImg Github](https://github.com/HumanSignal/labelImg) ja lataa se windowsille 'releases' kohdasta.
 
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/07375ae6-1a5c-4f1b-999c-46dc9c9d6e5e)
+
 Lataamisen jälkeen pura se haluamaasi kansioon ja avaa kyseisessä kansiossa oleva data kansio ja siellä oleva 'predefined_classes.txt' tiedosto.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/a4d7c399-b311-4719-8e62-1bebdfe1daa5)
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/e334c5a9-1562-47be-92c9-63c6757ed9fd)
 
 Jos et löydä kyseistä tiedostoa, voit luoda sen itse. sijaintiin: data/predefined_classes.txt
 
@@ -207,24 +223,29 @@ Kun olet luonut tiedoston, voit avata LabelImg ohjelman ja valita 'Open Dir' ja 
 
 Kun olet valinnut kansion, voit valita 'Change Save Dir' ja valita kansion johon annotaatio tiedostot tallennetaan. Tämä kansio on hyvä olla sama kuin kuvien kansio.
 
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/de50015b-c09b-4ba6-ac36-d5f550454cfd)
+
 Asetuksia, joita pitää/kannattaa muuttaa:
 
 Pakolliset:
 
 -   Vaihda 'PascalVOC' 'Yolo' muotoon.
 
-![test]()
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/a56e4450-6a79-4b8c-9677-7ac0f1bd8bd9)
 
 Suosittelen:
 
 -   Vaihda 'Auto Save Mode' päälle, jotta annotaatio tiedostot tallentuvat automaattisesti.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/cc260665-75a7-413a-bfc5-659ceecc4974)
+
 -   Merkitse 'Use Default Label' päälle, jotta voit valita luokan listasta, eikä joka kerta tarvitse kirjoittaa luokkaa itse.
 
-Kun olet valinnut kansion, voit aloittaa annotoinnin painamalla 'Create RectBox' nappia ja piirtämällä laatikon objektin ympärille. Kun olet piirtänyt laatikon, voit valita luokan listasta tai kirjoittaa sen itse.
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/f6bfc74b-857d-421a-bcba-5efd8581c04b)
 
-Kun olet valinnut luokan, voit tallentaa annotaation painamalla 'Save' nappia. 'Auto Save Mode' ollessa päällä, annotaatio tallentuu automaattisesti, kun vaihdat seuraavaan kuvaan.
+Kun olet valinnut kansion, voit aloittaa annotoinnin painamalla W-näppäintä ja piirtämällä laatikon objektin ympärille. Kun olet piirtänyt laatikon, voit valita luokan listasta tai kirjoittaa sen itse.
 
-Nyt kun olemme tutustuneet LabelImg ohjelmaan, voimme aloittaa oikeasti kuvien annotoinnin, joka on tärkein ja aikaa vievin osa mallin luomisessa.
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/f8a9ae25-d6ab-4772-ae4c-32178be0719d)
 
 Pikanäppäimet:
 
@@ -232,6 +253,10 @@ Pikanäppäimet:
 -   d = seuraava kuva
 -   a = edellinen kuva
 -   ctrl + s = tallenna annotaatio
+
+Kun olet valinnut luokan, voit tallentaa annotaation painamalla 'Save' nappia. 'Auto Save Mode' ollessa päällä, annotaatio tallentuu automaattisesti, kun vaihdat seuraavaan kuvaan.
+
+Nyt kun olemme tutustuneet LabelImg ohjelmaan, voimme aloittaa oikeasti kuvien annotoinnin, joka on tärkein ja aikaa vievin osa mallin luomisessa.
 
 LabelImg:n luomat annotaatio tiedostot ovat txt tiedostoja, jotka sisältävät tiedot kuvan tunnistettavista objekteista. Tiedostot luodaan automaattisesti kun tallennat annotaation.
 

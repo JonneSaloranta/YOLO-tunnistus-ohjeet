@@ -6,7 +6,7 @@ import uuid
 # Define customizable variables
 input_dir = os.path.join(os.getcwd(), "raw")  # Input directory
 output_dir = os.path.join(os.getcwd(), "processed")  # Output directory
-num_variations = 5  # Number of variations to create for each image
+num_variations = 50  # Number of variations to create for each image
 
 # Random transformation limits
 rotation_limit = 180  # Maximum rotation angle in degrees
