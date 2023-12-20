@@ -1,5 +1,10 @@
 ## Vaatimukset
 
+<details>
+<summary>Vaadittavat ohjelmat</summary>
+
+<br>
+
 [Colab (vaatii Google käyttäjän)](https://colab.research.google.com/)
 Colabia Käytetään mallien opettamiseen ja testaamiseen, jos sinulla ei ole omaa konetta jossa on tarpeeksi tehoa ja CUDA yhteensopiva näytönohjain.
 
@@ -17,7 +22,14 @@ Tässä ohjeessa käytetään Colabia, joten tämä ei sisällä ohjeita sille m
 
 [Ohjevideo Colabiin (YouTube)](https://youtu.be/WgPbbWmnXJ8)
 
+</details>
+
 ## Sisällysluettelo
+
+<details>
+<summary>Sisällysluettelo</summary>
+
+<br>
 
 ### Vaatimukset
 
@@ -30,6 +42,13 @@ Tässä ohjeessa käytetään Colabia, joten tämä ei sisällä ohjeita sille m
 -   [x] [Kuvien käsittely](#kuvien-käsittely)
 -   [x] [Kuvien muokkaus scripti](#randomize_images.py)
 
+</details>
+
+<details>
+<summary>Pohjan lataaminen</summary>
+
+<br>
+
 <a name="mallipohjan-lataaminen"></a>
 
 ## Mallipohjan lataaminen
@@ -39,6 +58,8 @@ Lataa mallipohja (suositeltavaa) [täältä](https://github.com/JonneSaloranta?t
 ```cmd
 git clone <repo linkki>
 ```
+
+</details>
 
 <a name="virtuaalinen-ympäristö"></a>
 
@@ -86,6 +107,11 @@ pip install ultralytics
 
 ## Kuvat ja niiden käsittely eri variaatioilla
 
+<details>
+<summary>Kuvien ottamisen ohje</summary>
+
+<br>
+
 Kappaleen tunnistus mallin opetusdatan(kuvien) tulisi sisältää mahdollisimman paljon erilaisia variaatiota esim. valaistus, kuvakulma jne. Opetusdatan kuvien määrä on myös tärkeä tekijä. Mitä enemmän kuvia sitä parempi(useimmiten).
 
 ### Kuvien ottaminen
@@ -96,9 +122,16 @@ Kappaleen tunnistus mallin opetusdatan(kuvien) tulisi sisältää mahdollisimman
 -   [x] Erilaiset kameran zoomaukset
 -   [x] Erilaiset kameran tarkennukset
 
+</details>
+
 <a name="kuvien-käsittely"></a>
 
 ### Kuvien käsittely
+
+<details>
+<summary>Kuvien käsittelyn ohje</summary>
+
+<br>
 
 Kuvien käsittely on suhteellisen helppoa. Kuvien käsittelyssä on hyvä käyttää erilaisia kuvankäsittelyohjelmia. Esim. GIMP, Photoshop, Paint.net, jne.
 
@@ -128,7 +161,15 @@ exposure_min = 0.5  # Minimi valotuskerroin
 exposure_max = 1.5  # Maksimi valotuskerroin
 ```
 
+</details>
+
 ## Kuvien annotointi
+
+<details>
+
+<summary>Kuvien annotointi ohje</summary>
+
+<br>
 
 Kuvien annotointi on tärkeä osa mallin opetusdataa. Annotaatiot ovat tiedostoja, jotka sisältävät tiedot kuvan tunnistettavista objekteista ja niiden sijainnista kuvassa.
 
@@ -209,3 +250,5 @@ Tiedosto sisältää 5 arvoa, jotka ovat _luokka, x1, y1, x2, y2_
 -   _y1_ on annotaation vasemman yläkulman y koordinaatti.
 -   _x2_ on annotaation oikean alakulman x koordinaatti.
 -   _y2_ on annotaation oikean alakulman y koordinaatti.
+
+</details>
