@@ -286,16 +286,6 @@ Tiedosto sisältää 5 arvoa, jotka ovat _luokka, x1, y1, x2, y2_
 
 </details>
 
-mallin opettaminen käynnissä
-![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/3a907537-620c-4bf3-903b-a56908e90c95)
-
-train_batch2
-![train_batch2](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/20d5e81f-4e48-42fd-8274-c58bfc9e92b4)
-
-tilastoja
-
-![results](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/18681a4c-e646-481b-87d3-c759ee2be370)
-
 ## Colab projektin luominen
 
 <details>
@@ -312,7 +302,7 @@ tilastoja
 
 ![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/c29ce963-0484-4483-8b21-790c51e2875e)
 
-3. Nyt pitää muokata asetuksia siten, että saadaan GPU(näytönohjain) käyttöön CPU(prosessorin) sijaan. Valitse 'Muokkaa' ja 'Työkirjan asetukset'. Sieltä vaihda CPU T4 GPU:ksi.
+3. Nyt pitää muokata asetuksia siten, että saadaan GPU(näytönohjain) käyttöön CPU(prosessorin) sijaan. Valitse 'Muokkaa' ja 'Työkirjan asetukset'. Sieltä vaihda CPU -> T4 GPU:ksi.
 
 ![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/cf95a9be-eedb-4742-9722-a4c2c81d2d3c)
 
@@ -381,5 +371,107 @@ Tässä sinun tulee muokata data= kohdassa oleva polku oikeaksi [katso Google Dr
 Tässä tapauksessa Google Driveen luomani kansio on nimeltään 'yolomalli'. nyt voit käyttää sitä polkuna Colabissa.
 
 5. Nyt meidän tarvitsee vielä ladata opetus data kansioineen Google Driveen. Voit joko tuoda kansiot itse tai käyttää tämän repon valmista mallipohjaa. Kansion nimi on 'Dataset' ja se sisältää kaikki tarvittavat tiedostot mallin opettamiseen.
+
+</details>
+
+## Tiedostojen lataaminen ja toiminnan varmistaminen
+
+<details>
+
+<summary>Ohjeet</summary>
+
+1. Varmista että Google Drive kansion polku on vastaavanlainen.
+
+```
+Google Drive
+└── oma-kansio
+    └── Dataset
+        └── oman-mallin-nimi
+            ├── test
+            ├── train
+            ├── valid
+            └── dataset.yaml
+```
+
+2. Voit jakaa kuvat ja annotaatiot siten, että 90-80% on train kansiossa ja 10-20% valid kansiossa
+
+3. Varmista, että train kansio sisältää kuvat, niiden annotaatiot sekä classes.txt. Kuvien ja annotaatioiden nimien pitää olla samat. Katso myös, että dataset.yaml tiedosto on oikein ja oikeassa kansiossa.
+
+```yaml
+path: ../drive/MyDrive/oma-kansio/Dataset/oman-mallin-nimi
+train: ../train/
+val: ../valid/
+test: ../test/
+
+nc: 1 # varmista, että luokkien määrä on oikein
+names: ["kissa"] # varmista, että luokkien nimet ovat oikein ja samassa järjestyksessä kuin classes.txt tiedostossa. Se löytyy train kansiosta.
+```
+
+4. Varmista että valid kansio sisältää kuvat ja niiden annotaatiot. Kuvien ja annotaatioiden nimien pitää olla samat.
+
+5. Varmista että Colabin koodit ja polut ovat oikein.
+
+```
+!yolo task=detect mode=train model=yolov8n.pt data=../content/drive/MyDrive/oma-kansio/Dataset/oma-malli/dataset.yaml epochs=200 imgsz=640
+```
+
+</details>
+
+## Tekoälymallin opettaminen(vihdoin)
+
+<details>
+
+<summary>Ohjeet</summary>
+
+Nyt kun kaikki on valmista, voimme opettaa mallin. Tämä voi kestää jonkin aikaa, riippuen kuinka monta kuvaa on ja kuinka monta epochia käytetään.
+
+Voit aloittaa mallin opettamise painamalla 'Suorituspalvelu' nappia ja sieltä 'Suorita kaikki'. tai voit myös painaa 'Ctrl + F9'.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/ceb9e08e-a3aa-42cf-ab66-e70d9a0c99c8)
+
+Colabin konsolissa pitäisi näkyä jotain tällaista.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/91279152-1704-4141-aa39-6410102a7962)
+
+Nyt vain odotetaan, että malli on opettanut tarpeeksi ja voimme testata sitä. Opettamasi mallin löydät täältä. train-kansion numero kasvaa joka kerta kun opetat mallia.
+
+```
+runs
+└── detect
+    └── train
+        └── weights
+            └── best.pt
+```
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/709bb071-0a72-47d0-8a6d-0ec750c138e9)
+
+</details>
+
+## Tekoälymallin tilastojen tulkinta
+
+<details>
+
+<summary>Ohjeet</summary>
+
+Tässä esimerkki mallissa opetin mallin tunnistamaan rajakytkimiä. Malli tunnistaa rajakytkimet hyvin, mutta se tunnistaa myös muita objekteja, joita ei pitäisi tunnistaa. Tämä johtuu siitä, että malli ei ole opettanut tarpeeksi. Tässä mallissa käytin vain 36 kuvaa, joten se ei ole tarpeeksi.
+
+Huomasin myös että malli toimii paremmin jos pidän rajakytkintä kädessäni eli se "oppi tunnistamaan" jos kytkintä pidetään kädessä. Tämä johtuu siitä, että malli ei ole opettanut tarpeeksi ja tarpeeksi monipuolisilla kuvilla. Kaikki kuvat oli otettu rajakytkin kädessä.
+
+train_batch.jpg tiedostot sisältää kuvan, jossa on mallin tunnistamat objektit ja niiden luokat.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/366f16a5-5d3f-48c6-bb47-7f8f89791c84)
+
+val_batch.jpg tiedostot sisältää kuvan, jossa on mallin tunnistamat objektit ja niiden luokat.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/fe08b083-bd1a-4757-bd1b-424faddd84c2)
+
+"Tärkeimpiä" tilastoja ovat:
+
+-   mAP50 - Tämä kertoo miten hyvin malli tunnistaa kappaleeet yli 50% varmuudella.
+-   mAP50-95 - Tämä kertoo miten hyvin malli tunnistaa kappaleeet 50-95% varmuudella.
+
+Kuvaa katsottaessa voidaan huomata, että malli tunnistaa rajakytkimet yli 60% varmuudella jo 20 epochin jälkeen.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/aa119816-6f41-467c-9411-629c39d6d798)
 
 </details>
