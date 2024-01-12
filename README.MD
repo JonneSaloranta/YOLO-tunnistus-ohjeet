@@ -433,7 +433,9 @@ Colabin konsolissa pitäisi näkyä jotain tällaista.
 
 ![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/91279152-1704-4141-aa39-6410102a7962)
 
-Nyt vain odotetaan, että malli on opettanut tarpeeksi ja voimme testata sitä. Opettamasi mallin löydät täältä. train-kansion numero kasvaa joka kerta kun opetat mallia.
+Nyt vain odotetaan, että malli on opettanut tarpeeksi ja voimme testata sitä. Opettamasi mallin löydät täältä. train-kansion numero kasvaa joka kerta kun opetat mallia. Kansiossa oleva best.pt tiedosto on paras malli, jota voit käyttää.
+
+Laita best.pt tiedosto samaan kansioon kuin [webcam_detect.py](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/blob/master/webcam_detect.py) tiedosto ja käynnistä se pythonilla. Se käyttää tietokoneeseen kytkettyä webkameraa ja tunnistaa kuvassa olevat objektit.
 
 ```
 runs
