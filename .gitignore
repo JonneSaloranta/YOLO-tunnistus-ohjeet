@@ -4,20 +4,14 @@ venv
 *.onnx
 .obsidian
 
+Dataset/*.cache
 
-
-raw/*.[JjPp][PpNn][EeGg][Gg]
-processed/*.[JjPpTt][PpNnXx][EeGgTt]
-processed/*.txt
-processed/*.jpeg
-
-dataset/test/*
-dataset/train/*
-dataset/valid/*
-dataset/*.cache
+Dataset/malli/test/*
+Dataset/malli/train/*
+Dataset/malli/valid/*
 
 images/
-raw/
-
+raw/*
+processed/*
 
 runs/
