@@ -8,11 +8,16 @@ venv
 
 raw/*.[JjPp][PpNn][EeGg][Gg]
 processed/*.[JjPpTt][PpNnXx][EeGgTt]
+processed/*.txt
+processed/*.jpeg
 
-dataset/test/*.[JjPpTt][PpNnXx][EeGg][GgTt]
-dataset/train/*.[JjPpTt][PpNnXx][EeGgTt]
-dataset/valid/*.[JjPpTt][PpNnXx][EeGgTt]
+dataset/test/*
+dataset/train/*
+dataset/valid/*
 dataset/*.cache
+
+images/
+raw/
 
 
 runs/
