@@ -295,3 +295,91 @@ train_batch2
 tilastoja
 
 ![results](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/18681a4c-e646-481b-87d3-c759ee2be370)
+
+## Colab projektin luominen
+
+<details>
+<summary>Ohjeet</summary>
+
+1. Avaa Google Drive ja luo uusi kansio, johon tallennat kaikki tiedostot.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/cf4d8127-4152-4302-bf6f-db9144dd2c9c)
+
+2. Avaa kansio ja luo uusi Jupiter Notebook painamalla oikealla hiiren näppäimellä ja valitsemalla 'Lisää' ja 'Google Colaboratory'. Tämä luo uuden Jupiter Notebook tiedoston, jonka pitäisi avautua uuteen välilehteen.
+   Voit nimeätä tiedoston haluamallasi nimellä, kunhan se on .ipynb muodossa.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/004a6b70-63e0-42ed-a9c2-8bd43ac069f8)
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/c29ce963-0484-4483-8b21-790c51e2875e)
+
+3. Nyt pitää muokata asetuksia siten, että saadaan GPU(näytönohjain) käyttöön CPU(prosessorin) sijaan. Valitse 'Muokkaa' ja 'Työkirjan asetukset'. Sieltä vaihda CPU T4 GPU:ksi.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/cf95a9be-eedb-4742-9722-a4c2c81d2d3c)
+
+Tässä paina 'OK' ja 'Tallenna'.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/aec3d234-e1d6-47d4-8bb5-f7889a1a3cad)
+
+4. Nyt voidaan tarkistaa onko GPU käytössä. Paina '+ Koodi' ja kirjoita seuraava koodi kenttään ja aja se painamalla 'Play' nappia.
+
+```
+!nvidia-smi
+```
+
+Jos kaikki on mennyt oikein, pitäisi näkyä jotain tällaista.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/471cd2f8-40a0-4ba5-b7da-a77a91ac12cc)
+
+5. Seuraavaksi lisätään seuraavat koodit samalla tavalla kuin äskeinenkin.
+
+Tällä asennetaan Ultralytics paketti.
+
+```
+!pip install ultralytics
+```
+
+Tällä otetaan Ultralytics paketti käyttöön.
+
+```
+from ultralytics import YOLO
+```
+
+ja lopuksi tällä opetetaan malli.
+
+```
+!yolo task=detect mode=train model=yolov8n.pt data=../content/drive/MyDrive/AI/Dataset/malli/dataset.yaml epochs=200 imgsz=640
+```
+
+Tässä sinun tulee muokata data= kohdassa oleva polku oikeaksi [katso Google Driven yhdistäminen projektiin](#google-drive-yhdistäminen) ja epochs= kohdassa oleva luku haluamaksesi. Epochs tarkoittaa kuinka monta kertaa malli käy läpi kaikki kuvat. Mitä enemmän epochseja, sitä parempi mallista tulee, mutta se vie enemmän aikaa.
+
+</details>
+
+<a name="google-drive-yhdistäminen"></a>
+
+## Google Driven yhdistäminen Colabiin
+
+<details>
+
+<summary>Ohjeet</summary>
+
+1. Paina kansio kuvaketta.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/7b4021fa-7e32-4635-ba15-d0c93d1b2fbe)
+
+2. Paina 'Ota käyttöön Drive' nappia.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/20a80be6-b344-4830-9de9-4524e7301745)
+
+3. Anna Colabille lupa käyttää Google Drivea.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/aed430a8-fd60-431e-a4b3-8407c1e397cd)
+
+4. Tämän jälkeen pitäisi tulla 'drive' kansio näkyviin.
+
+![kuva](https://github.com/JonneSaloranta/YOLO-tunnistus-ohjeet/assets/72470168/908c39b5-71ad-47ed-89ce-7a1ce87e6603)
+
+Tässä tapauksessa Google Driveen luomani kansio on nimeltään 'yolomalli'. nyt voit käyttää sitä polkuna Colabissa.
+
+5. Nyt meidän tarvitsee vielä ladata opetus data kansioineen Google Driveen. Voit joko tuoda kansiot itse tai käyttää tämän repon valmista mallipohjaa. Kansion nimi on 'Dataset' ja se sisältää kaikki tarvittavat tiedostot mallin opettamiseen.
+
+</details>
