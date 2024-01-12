@@ -1,7 +1,7 @@
-path: ../dataset
-train: train/
-val: valid/
-test: test/
+path: ../dataset # datasetin polku. Käytä seuraavaa polkua jos käytät colabia   ../drive/MyDrive/<kansion nimi>/dataset/kytkin
+train: train/ # opetusdatan kansion nimi
+val: valid/ # validointidatan kansion nimi
+test: test/ # testidatan kansion nimi
 
-nc: 2
-names: ['kytkin','kissa']
+nc: 1 # luokkien määrä
+names: ['kissa'] # luokkien nimet esim. ['kissa', 'koira', 'kani'], pitää olla sama järjestys kuin labels.txt tiedostossa, muutoin ei toimi
