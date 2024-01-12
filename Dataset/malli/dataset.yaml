@@ -1,4 +1,4 @@
-path: ../dataset # datasetin polku. Käytä seuraavaa polkua jos käytät colabia   ../drive/MyDrive/<kansion nimi>/dataset/kytkin
+path: ../dataset # datasetin polku. Käytä seuraavaa polkua jos käytät colabia   ../drive/MyDrive/<kansion nimi>/Dataset/<oman mallin nimi>
 train: train/ # opetusdatan kansion nimi
 val: valid/ # validointidatan kansion nimi
 test: test/ # testidatan kansion nimi
