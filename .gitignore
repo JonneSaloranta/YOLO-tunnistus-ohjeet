@@ -6,10 +6,6 @@ venv
 
 Dataset/*.cache
 
-Dataset/malli/test/*
-Dataset/malli/train/*
-Dataset/malli/valid/*
-
 images/
 raw/*
 processed/*
